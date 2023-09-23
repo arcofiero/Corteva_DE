@@ -1,4 +1,4 @@
-# AWS Deployment for Django Project
+# AWS Deployment for Weather App Project
 
 ## **1. Database**
 
