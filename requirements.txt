@@ -1,0 +1,24 @@
+# General libraries for working with CSV and data ingestion
+pandas==2.0.3
+psycopg2==2.9.6
+
+# Django for building the web framework
+Django==4.2.5
+
+# Django REST Framework for creating API endpoints
+djangorestframework==3.14.0
+
+# drf-yasg for generating Swagger/OpenAPI documentation
+drf-yasg==1.21.5
+
+# PostgreSQL client for Django
+psycopg2-binary==2.9.6
+
+# For better query performance
+django-filter==23.1
+
+# Gunicorn for deployment (optional but recommended)
+gunicorn==20.1.0
+
+# Optional: Environment variable management (if used)
+python-dotenv==1.0.0
