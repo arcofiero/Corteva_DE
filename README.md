@@ -19,8 +19,7 @@ This project is a RESTful API for weather data and statistics using Django and D
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd weather_project
+git clone https://github.com/arcofiero/Corteva_DE.git
 ```
 
 ### 2. Create a Virtual Environment and Activate it
@@ -76,6 +75,29 @@ createdb -U postgres weather_db
 Update Database Connection in Code (If Necessary)
 
 If the Python code in problem 1, 2, or 3 connects to the database, make sure the database credentials in the code match the ones you just created (your PostgreSQL username and database).
+
+### 5. Running Problem 1,2,3
+```shell
+python3 src/problem1.py
+python3 src/problem2.py
+python3 src/problem3.py
+```
+#### Problem 1 Terminal Output
+![Problem1](Problem1-1.png)
+
+#### Problem 2 Terminal Output
+![Terminal Output](Problem2.2-1.png)
+
+#### Running SQL query to verify
+![Alt text](Problem2.2-3.png)
+
+#### Problem 3 Terminal Output
+![Alt text](Problem3-1.png)
+
+#### Running SQL query to verify
+![Alt text](Problem3_sql-1.png) 
+
+
 
 
 
