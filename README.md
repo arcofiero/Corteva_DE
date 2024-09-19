@@ -35,10 +35,50 @@ pip install -r requirements.txt
 ```
 
 ### 4. Set Up the Database
-Make sure PostgreSQL is installed and running. Create a database named weather_db.
-```bash
-createdb weather_db
+
+#### 4.1 Install PostgreSQL, if not already:
+```bash 
+brew install postgresql@14
 ```
+#### 4.2 After installing, you can link PostgreSQL 14 with Homebrew:
+```bash
+  brew link postgresql@14
+```
+#### 4.4 Start the PostgreSQL service:
+```bash
+brew services start postgresql@14
+```
+#### 4.5 Check the status of the service to ensure it’s running:
+```bash
+brew services list
+```
+#### 4.6 Set Up PostgreSQL User and Database
+Make sure you have the correct PostgreSQL user and database created before migrating and running the Python scripts.
+
+1. Create a PostgreSQL User If you haven't set up a PostgreSQL user yet, you can do so with the following commands:
+
+```bash
+psql postgres
+```
+Now run this in the postgresql shell
+```sql
+CREATE USER postgres WITH PASSWORD '1234';
+```
+Replace your_username and your_password with the credentials you want to use.
+
+2. Create the Weather Database
+
+Now, create the PostgreSQL database to store the weather data:
+
+```bash
+createdb -U postgres weather_db
+```
+Update Database Connection in Code (If Necessary)
+
+If the Python code in problem 1, 2, or 3 connects to the database, make sure the database credentials in the code match the ones you just created (your PostgreSQL username and database).
+
+
+
 ### 5. Apply Migrations
 Run the following command to create the necessary tables in the database:
 ```bash
