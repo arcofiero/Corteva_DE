@@ -83,19 +83,19 @@ python3 src/problem2.py
 python3 src/problem3.py
 ```
 #### Problem 1 Terminal Output
-![Problem1](Problem1-1.png)
+![Problem1](UI_Screenshots/Problem1-1.png)
 
 #### Problem 2 Terminal Output
-![Terminal Output](Problem2.2-1.png)
+![Terminal Output](UI_Screenshots/Problem2.2-1.png)
 
 #### Running SQL query to verify
-![Alt text](Problem2.2-3.png)
+![Alt text](UI_Screenshots/Problem2.2-3.png)
 
 #### Problem 3 Terminal Output
-![Alt text](Problem3-1.png)
+![Alt text](UI_Screenshots/Problem3-1.png)
 
 #### Running SQL query to verify
-![Alt text](Problem3_sql-1.png) 
+![Alt text](UI_Screenshots/Problem3_sql-1.png) 
 
 
 
