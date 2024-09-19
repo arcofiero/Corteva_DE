@@ -37,7 +37,6 @@ pip install -r requirements.txt
 ### 4. Set Up the Database
 Make sure PostgreSQL is installed and running. Create a database named weather_db.
 ```bash
-Copy code
 createdb weather_db
 ```
 ### 5. Apply Migrations
