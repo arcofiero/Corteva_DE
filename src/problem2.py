@@ -19,7 +19,7 @@ DB_PARAMS = {
     'port': '5432'
 }
 
-WX_DATA_DIR = "../wx_data"  # Directory containing raw weather data files
+WX_DATA_DIR = "./wx_data"  # Directory containing raw weather data files
 
 def ingest_file(filepath):
     # Load the raw weather data file into a pandas DataFrame
