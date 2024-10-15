@@ -15,12 +15,10 @@
 #     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 # """
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from weather_app import views
+from weather_app import views  # Import the views from weather_app
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -33,7 +31,30 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', views.home, name='home'),  # Link the root URL to the home view
     path('api/weather/', views.WeatherDataViewSet.as_view({'get': 'weather_list'}), name='weather'),
-    path('api/weather/stats/', views.WeatherStatsViewSet.as_view({'get' : 'weather_stats'}), name='weather_stats'),
+    path('api/weather/stats/', views.WeatherStatsViewSet.as_view({'get': 'weather_stats'}), name='weather_stats'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+]
+from django.urls import path, include
+from weather_app import views  # Import the views from weather_app
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Weather API",
+      default_version='v1',
+      description="Weather API",
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
+
+urlpatterns = [
+    path('', views.home, name='home'),  # Link the root URL to the home view
+    path('api/weather/', views.WeatherDataViewSet.as_view({'get': 'weather_list'}), name='weather'),
+    path('api/weather/stats/', views.WeatherStatsViewSet.as_view({'get': 'weather_stats'}), name='weather_stats'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]

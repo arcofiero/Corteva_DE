@@ -24,8 +24,8 @@ git clone https://github.com/arcofiero/Corteva_DE.git
 
 ### 2. Create a Virtual Environment and Activate it
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv corteva
+source corteva/bin/activate
 ```
 
 ### 3. Install Dependencies

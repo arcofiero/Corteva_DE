@@ -1,11 +1,23 @@
 from rest_framework import generics
 from .models import WeatherData, WeatherStats
 from .serializers import WeatherDataSerializer, WeatherStatsSerializer
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse  # Added HttpResponse import
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import WeatherData, WeatherStats
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
+
+# Add the home view here
+def home(request):
+    html = """
+    <h1>Welcome to the Weather App API</h1>
+    <p>Please select one of the following options:</p>
+    <ul>
+        <li><a href="/api/weather/">Weather Data</a></li>
+        <li><a href="/api/weather/stats/">Weather Stats</a></li>
+        <li><a href="/swagger/">Swagger Documentation</a></li>
+    </ul>
+    """
+    return HttpResponse(html)
 
 
 def paginate_query(request, queryset):
@@ -66,5 +78,3 @@ class WeatherStatsViewSet(viewsets.ReadOnlyModelViewSet):
         
         data = [{"year": item.year, "station": item.station, "avg_max_temp": item.avg_max_temp, "avg_min_temp": item.avg_min_temp, "total_precipitation": item.total_precipitation} for item in queryset]
         return JsonResponse(data, safe=False)
-
-

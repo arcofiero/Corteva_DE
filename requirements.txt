@@ -1,5 +1,6 @@
 # General libraries for working with CSV and data ingestion
-pandas==2.0.3
+pandas>=2.0.3
+numpy>=1.21  # Add numpy with an appropriate version
 psycopg2==2.9.6
 
 # Django for building the web framework
